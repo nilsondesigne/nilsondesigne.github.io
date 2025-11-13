@@ -6,8 +6,7 @@
   <title>Nilson Designer</title>
   <link rel="stylesheet" href="styles.css">
   <meta name="description" content="Portfólio profissional de Nilson Designer">
-
-  <!-- Font Awesome para ícones de redes sociais -->
+  <!-- Font Awesome para ícones -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -47,7 +46,37 @@
       <p>Email: <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></p>
       <p>Redes: @seuusuario</p>
     </section>
+
+    <!-- PEDIDO VIA WHATSAPP -->
+    <section class="card">
+      <h2>Faça seu pedido</h2>
+      <p>Quer contratar um serviço ou projeto? Clique no botão abaixo e envie seu pedido direto pelo WhatsApp!</p>
+      <a href="https://wa.me/5598985217495?text=Olá,%20quero%20fazer%20um%20pedido!" target="_blank" class="btn">Fazer Pedido</a>
+    </section>
   </main>
+
+  <!-- PORTFÓLIO COM LIGHTBOX -->
+  <section class="container portfolio">
+    <h2 style="grid-column: 1 / -1; text-align: center; color: var(--primary);">Portfólio</h2>
+
+    <div class="portfolio-item">
+      <img src="imagens/projeto1.jpg" alt="Projeto 1" onclick="openLightbox(this)">
+    </div>
+    <div class="portfolio-item">
+      <img src="imagens/projeto2.jpg" alt="Projeto 2" onclick="openLightbox(this)">
+    </div>
+    <div class="portfolio-item">
+      <img src="imagens/projeto3.jpg" alt="Projeto 3" onclick="openLightbox(this)">
+    </div>
+    <div class="portfolio-item">
+      <img src="imagens/projeto4.jpg" alt="Projeto 4" onclick="openLightbox(this)">
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Projeto">
+  </div>
 
   <!-- FOOTER -->
   <footer>
@@ -56,6 +85,17 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    function openLightbox(img) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
   </script>
 </body>
 </html>
