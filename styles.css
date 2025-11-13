@@ -17,24 +17,50 @@ body {
   color: var(--text);
 }
 
+/* HEADER COM IMAGEM DE FUNDO */
 header {
-  background: linear-gradient(90deg, var(--primary), #5aa0ff);
+  background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+  position: relative;
+  height: 300px;
   color: white;
+  display: flex;
+  align-items: center;
+}
+
+.header-overlay {
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
-  padding: 3rem 1rem;
-  border-bottom-left-radius: 1.5rem;
-  border-bottom-right-radius: 1.5rem;
+  padding: 1rem;
 }
 
-header h1 {
-  font-size: 2.5rem;
+.header-overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
 }
 
-header p {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
+.header-overlay p {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
 
+.social-icons a {
+  color: white;
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  transition: transform 0.2s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+}
+
+/* MAIN */
 .container {
   max-width: 1000px;
   margin: 2rem auto;
@@ -61,6 +87,7 @@ header p {
   text-decoration: none;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
   padding: 1.5rem;
