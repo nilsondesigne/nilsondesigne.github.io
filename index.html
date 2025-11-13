@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Meu Site Grátis</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Site grátis gerado rapidamente" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Olá — Bem-vindo!</h1>
+    <p>Site grátis criado com GitHub Pages.</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Sobre</h2>
+      <p>Coloque aqui uma breve descrição sobre você ou seu serviço.</p>
+    </section>
+
+    <section class="card">
+      <h2>Contato</h2>
+      <p>Email: seu@email.com</p>
+      <p>Redes: @seuusuario</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>© <span id="year"></span> — Criado grátis</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
