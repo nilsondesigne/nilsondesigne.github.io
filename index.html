@@ -1,101 +1,184 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nilson Designer</title>
-  <link rel="stylesheet" href="styles.css">
-  <meta name="description" content="Portfólio profissional de Nilson Designer">
-  <!-- Font Awesome para ícones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nilson Designer - Polaroids</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-    <div class="header-overlay">
-      <div class="container">
-        <h1>Nilson Designer</h1>
-        <p>Portfólio Profissional</p>
-        <div class="social-icons">
-          <a href="https://instagram.com/seuusuario" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://linkedin.com/in/seuusuario" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/seuusuario" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <!-- MAIN -->
-  <main class="container">
-    <section class="card">
-      <h2>Sobre mim</h2>
-      <p>Sou designer e desenvolvedor, criando soluções criativas e modernas para web e identidade visual.</p>
-    </section>
+<!-- HEADER -->
+<header>
+  <div class="header-overlay">
+    <h1>Nilson Designer</h1>
+    <nav>
+      <a href="#produtos">Produtos</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
 
-    <section class="card">
-      <h2>Serviços</h2>
-      <ul>
-        <li>Design de sites responsivos</li>
-        <li>Identidade visual e logos</li>
-        <li>Consultoria em UX/UI</li>
-      </ul>
-    </section>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-overlay">
+    <h2>Polaroids Personalizadas</h2>
+    <p>Crie suas fotos únicas e envie seu pedido diretamente!</p>
+  </div>
+</section>
 
-    <section class="card">
-      <h2>Contato</h2>
-      <p>Email: <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></p>
-      <p>Redes: @seuusuario</p>
-    </section>
+<!-- PRODUTOS -->
+<main class="container" id="produtos">
 
-    <!-- PEDIDO VIA WHATSAPP -->
-    <section class="card">
-      <h2>Faça seu pedido</h2>
-      <p>Quer contratar um serviço ou projeto? Clique no botão abaixo e envie seu pedido direto pelo WhatsApp!</p>
-      <a href="https://wa.me/5598985217495?text=Olá,%20quero%20fazer%20um%20pedido!" target="_blank" class="btn">Fazer Pedido</a>
-    </section>
-  </main>
-
-  <!-- PORTFÓLIO COM LIGHTBOX -->
-  <section class="container portfolio">
-    <h2 style="grid-column: 1 / -1; text-align: center; color: var(--primary);">Portfólio</h2>
-
-    <div class="portfolio-item">
-      <img src="imagens/projeto1.jpg" alt="Projeto 1" onclick="openLightbox(this)">
-    </div>
-    <div class="portfolio-item">
-      <img src="imagens/projeto2.jpg" alt="Projeto 2" onclick="openLightbox(this)">
-    </div>
-    <div class="portfolio-item">
-      <img src="imagens/projeto3.jpg" alt="Projeto 3" onclick="openLightbox(this)">
-    </div>
-    <div class="portfolio-item">
-      <img src="imagens/projeto4.jpg" alt="Projeto 4" onclick="openLightbox(this)">
-    </div>
-  </section>
-
-  <!-- LIGHTBOX -->
-  <div id="lightbox" onclick="closeLightbox()">
-    <img id="lightbox-img" src="" alt="Projeto">
+  <div class="card" data-nome="Polaroid Tradicional" data-preco="10">
+    <img src="imagens/polaroid1.jpg" alt="Polaroid Tradicional">
+    <h3>Polaroid Tradicional</h3>
+    <p>R$10 cada</p>
+    <label>Quantidade:</label>
+    <input type="number" class="qtd-prod" value="1" min="1">
+    <button class="btn adicionar">Adicionar ao Carrinho</button>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© <span id="year"></span> Nilson Designer</p>
-  </footer>
+  <div class="card" data-nome="Polaroid Colorida" data-preco="15">
+    <img src="imagens/polaroid2.jpg" alt="Polaroid Colorida">
+    <h3>Polaroid Colorida</h3>
+    <p>R$15 cada</p>
+    <label>Quantidade:</label>
+    <input type="number" class="qtd-prod" value="1" min="1">
+    <button class="btn adicionar">Adicionar ao Carrinho</button>
+  </div>
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <div class="card" data-nome="Polaroid Vintage" data-preco="12">
+    <img src="imagens/polaroid3.jpg" alt="Polaroid Vintage">
+    <h3>Polaroid Vintage</h3>
+    <p>R$12 cada</p>
+    <label>Quantidade:</label>
+    <input type="number" class="qtd-prod" value="1" min="1">
+    <button class="btn adicionar">Adicionar ao Carrinho</button>
+  </div>
 
-    function openLightbox(img) {
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.getElementById('lightbox-img');
-      lightboxImg.src = img.src;
-      lightbox.style.display = 'flex';
-    }
+</main>
 
-    function closeLightbox() {
-      document.getElementById('lightbox').style.display = 'none';
-    }
-  </script>
+<!-- CARRINHO LATERAL -->
+<div id="carrinho">
+  <h3>Carrinho</h3>
+  <ul id="listaCarrinho"></ul>
+  <p>Total: R$ <span id="total">0</span></p>
+
+  <!-- Campos cliente -->
+  <label for="nomeCliente">Nome:</label>
+  <input type="text" id="nomeCliente" placeholder="Seu nome">
+
+  <label for="whatsappCliente">WhatsApp:</label>
+  <input type="text" id="whatsappCliente" placeholder="WhatsApp com DDD">
+
+  <button id="enviarForm" class="btn">Enviar Pedido</button>
+</div>
+
+<!-- PORTFÓLIO -->
+<section class="container portfolio" id="portfolio">
+  <h2 style="grid-column:1/-1;text-align:center;color:var(--primary)">Portfólio</h2>
+  <div class="portfolio-item"><img src="imagens/projeto1.jpg" onclick="openLightbox(this)"></div>
+  <div class="portfolio-item"><img src="imagens/projeto2.jpg" onclick="openLightbox(this)"></div>
+  <div class="portfolio-item"><img src="imagens/projeto3.jpg" onclick="openLightbox(this)"></div>
+  <div class="portfolio-item"><img src="imagens/projeto4.jpg" onclick="openLightbox(this)"></div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()"><img id="lightbox-img"></div>
+
+<!-- BOTÃO WHATSAPP FIXO -->
+<a href="#" id="whatsapp-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- CONTATO -->
+<section class="container" id="contato">
+  <div class="card">
+    <h2>Contato</h2>
+    <p>Email: <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/98985217495" target="_blank">+55 98 98521-7495</a></p>
+    <p>Redes: @seuusuario</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© <span id="year"></span> Nilson Designer</p>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// LIGHTBOX
+function openLightbox(img){ 
+  document.getElementById('lightbox-img').src=img.src; 
+  document.getElementById('lightbox').style.display='flex'; 
+}
+function closeLightbox(){ 
+  document.getElementById('lightbox').style.display='none'; 
+}
+
+// CARRINHO
+let carrinho=[];
+let total=0;
+const listaCarrinho=document.getElementById('listaCarrinho');
+const totalSpan=document.getElementById('total');
+
+document.querySelectorAll('.adicionar').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const card = btn.parentElement;
+    const nome = card.dataset.nome;
+    const preco = parseFloat(card.dataset.preco);
+    const qtd = parseInt(card.querySelector('.qtd-prod').value);
+    carrinho.push({nome, preco, qtd});
+    atualizarCarrinho();
+  });
+});
+
+function atualizarCarrinho(){
+  listaCarrinho.innerHTML='';
+  total=0;
+  carrinho.forEach(item=>{
+    const li=document.createElement('li');
+    li.textContent=`${item.nome} - ${item.qtd}x - R$${item.preco*item.qtd}`;
+    listaCarrinho.appendChild(li);
+    total+=item.preco*item.qtd;
+  });
+  totalSpan.textContent = total;
+}
+
+// ENVIAR PEDIDO PARA WHATSAPP
+document.getElementById('enviarForm').addEventListener('click', ()=>{
+  if(carrinho.length===0){
+    alert("Adicione ao menos um item ao carrinho.");
+    return;
+  }
+
+  const nomeCliente = document.getElementById('nomeCliente').value.trim();
+  const whatsappCliente = document.getElementById('whatsappCliente').value.trim();
+
+  if(!nomeCliente || !whatsappCliente){
+    alert("Por favor, preencha seu nome e WhatsApp.");
+    return;
+  }
+
+  const modelosText = carrinho.map(i=>`${i.nome} - ${i.qtd}x`).join("\n");
+  const mensagem = `Olá, meu nome é ${nomeCliente}.\nGostaria de pedir os seguintes itens:\n${modelosText}`;
+
+  const numeroWhatsApp = whatsappCliente.replace(/\D/g,'');
+  const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+  window.open(url, "_blank");
+});
+
+// BOTÃO WHATSAPP FLUTUANTE ABRE CONVERSA
+document.getElementById('whatsapp-btn').addEventListener('click', ()=>{
+  const numero = "5598985217495"; // seu WhatsApp
+  const url = `https://wa.me/${numero}`;
+  window.open(url, "_blank");
+});
+</script>
+
 </body>
 </html>

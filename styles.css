@@ -1,158 +1,253 @@
-:root {
-  --primary: #1f6feb;
-  --bg: #f7f7fb;
-  --card: #fff;
-  --text: #222;
-}
-
+/* RESET */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
+/* VARIÁVEIS DE CORES */
+:root {
+  --primary: #27ae60;
+  --secondary: #2c3e50;
+  --bg: #f9f9f9;
+  --white: #fff;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+/* BODY */
 body {
-  font-family: 'Inter', sans-serif;
   background: var(--bg);
-  color: var(--text);
+  color: var(--secondary);
+  line-height: 1.6;
 }
 
-/* HEADER COM IMAGEM DE FUNDO */
+/* HEADER */
 header {
-  background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-  position: relative;
-  height: 300px;
-  color: white;
-  display: flex;
-  align-items: center;
+  background: var(--secondary);
+  color: var(--white);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+header nav {
+  text-align: center;
+  margin-top: 10px;
+}
+header nav a {
+  color: var(--white);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+header nav a:hover {
+  color: var(--primary);
 }
 
-.header-overlay {
-  background-color: rgba(0,0,0,0.5);
-  width: 100%;
-  height: 100%;
+/* HERO */
+.hero {
+  background: url('imagens/hero-bg.jpg') center/cover no-repeat;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  position: relative;
+}
+.hero-overlay {
+  background: rgba(0,0,0,0.5);
+  color: var(--white);
+  padding: 20px;
   text-align: center;
-  padding: 1rem;
+}
+.hero-overlay h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.hero-overlay p {
+  font-size: 1.2rem;
 }
 
-.header-overlay h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-.header-overlay p {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-}
-
-.social-icons a {
-  color: white;
-  margin: 0 0.5rem;
-  font-size: 1.5rem;
-  transition: transform 0.2s;
-}
-
-.social-icons a:hover {
-  transform: scale(1.2);
-}
-
-/* MAIN */
+/* CONTAINER */
 .container {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  width: 90%;
+  max-width: 1200px;
+  margin: 40px auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 
+/* CARD PRODUTOS */
 .card {
-  background: var(--card);
-  padding: 2rem 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 6px 18px rgba(20,20,40,0.05);
+  background: var(--white);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
-
-.card h2 {
-  color: var(--primary);
-  margin-bottom: 1rem;
+.card img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
-
-.card a {
-  color: var(--primary);
-  text-decoration: none;
+.card h3 {
+  margin-bottom: 5px;
 }
-
-/* BOTÃO WHATSAPP */
-.btn {
-  display: inline-block;
-  background-color: var(--primary);
-  color: white;
-  padding: 0.7rem 1.5rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
+.card p {
+  margin-bottom: 10px;
   font-weight: bold;
-  transition: transform 0.2s, background-color 0.2s;
-  margin-top: 0.5rem;
+}
+.card label {
+  margin-bottom: 5px;
+  display: block;
+}
+.card input.qtd-prod {
+  width: 60px;
+  padding: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.card button {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.card button:hover {
+  background: #219150;
 }
 
-.btn:hover {
-  transform: scale(1.05);
-  background-color: #155abc;
+/* CARRINHO LATERAL */
+#carrinho {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  width: 250px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 5px 20px var(--shadow);
+  padding: 15px;
+  z-index: 999;
+}
+#carrinho h3 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+#carrinho ul {
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+#carrinho ul li {
+  margin-bottom: 5px;
+}
+#carrinho input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+#carrinho button {
+  width: 100%;
+  padding: 10px;
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+#carrinho button:hover {
+  background: #219150;
 }
 
 /* PORTFÓLIO */
-.portfolio {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-  margin: 2rem auto;
-  max-width: 1000px;
-  padding: 0 1rem;
-}
-
 .portfolio-item img {
   width: 100%;
-  border-radius: 1rem;
-  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 12px;
   cursor: pointer;
+  transition: transform 0.3s;
 }
-
 .portfolio-item img:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(20,20,40,0.2);
 }
 
 /* LIGHTBOX */
 #lightbox {
   display: none;
   position: fixed;
-  z-index: 999;
-  top: 0;
-  left: 0;
+  top:0; left:0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.8);
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  z-index: 1000;
 }
-
 #lightbox img {
   max-width: 90%;
-  max-height: 90%;
-  border-radius: 1rem;
-  box-shadow: 0 10px 25px rgba(20,20,40,0.5);
+  max-height: 80%;
+  border-radius: 12px;
+}
+
+/* BOTÃO WHATSAPP FLUTUANTE */
+#whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 2rem;
+  box-shadow: 0 5px 15px var(--shadow);
+  z-index: 1001;
+}
+#whatsapp-btn:hover {
+  background: #1ebe57;
+}
+
+/* CONTATO */
+#contato .card {
+  text-align: center;
+  padding: 20px;
 }
 
 /* FOOTER */
 footer {
+  background: var(--secondary);
+  color: var(--white);
   text-align: center;
-  padding: 1.5rem;
-  color: #667085;
-  margin-top: 2rem;
+  padding: 15px 0;
+  margin-top: 40px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  #carrinho {
+    position: static;
+    width: 100%;
+    margin: 20px 0;
+  }
+  .container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
 }
