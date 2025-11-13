@@ -1,96 +1,61 @@
-:root {
-  --primary: #1f6feb;
-  --bg: #f7f7fb;
-  --card: #fff;
-  --text: #222;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nilson Designer</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Portfólio profissional de Nilson Designer">
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  <!-- Font Awesome para ícones de redes sociais -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-overlay">
+      <div class="container">
+        <h1>Nilson Designer</h1>
+        <p>Portfólio Profissional</p>
+        <div class="social-icons">
+          <a href="https://instagram.com/seuusuario" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com/in/seuusuario" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/seuusuario" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-}
+  <!-- MAIN -->
+  <main class="container">
+    <section class="card">
+      <h2>Sobre mim</h2>
+      <p>Sou designer e desenvolvedor, criando soluções criativas e modernas para web e identidade visual.</p>
+    </section>
 
-/* HEADER COM IMAGEM DE FUNDO */
-header {
-  background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
-  position: relative;
-  height: 300px;
-  color: white;
-  display: flex;
-  align-items: center;
-}
+    <section class="card">
+      <h2>Serviços</h2>
+      <ul>
+        <li>Design de sites responsivos</li>
+        <li>Identidade visual e logos</li>
+        <li>Consultoria em UX/UI</li>
+      </ul>
+    </section>
 
-.header-overlay {
-  background-color: rgba(0,0,0,0.5);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 1rem;
-}
+    <section class="card">
+      <h2>Contato</h2>
+      <p>Email: <a href="mailto:seuemail@exemplo.com">seuemail@exemplo.com</a></p>
+      <p>Redes: @seuusuario</p>
+    </section>
+  </main>
 
-.header-overlay h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
+  <!-- FOOTER -->
+  <footer>
+    <p>© <span id="year"></span> Nilson Designer</p>
+  </footer>
 
-.header-overlay p {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-}
-
-.social-icons a {
-  color: white;
-  margin: 0 0.5rem;
-  font-size: 1.5rem;
-  transition: transform 0.2s;
-}
-
-.social-icons a:hover {
-  transform: scale(1.2);
-}
-
-/* MAIN */
-.container {
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: var(--card);
-  padding: 2rem 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 6px 18px rgba(20,20,40,0.05);
-}
-
-.card h2 {
-  color: var(--primary);
-  margin-bottom: 1rem;
-}
-
-.card a {
-  color: var(--primary);
-  text-decoration: none;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  color: #667085;
-  margin-top: 2rem;
-}
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
